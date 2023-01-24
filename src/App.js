@@ -2,6 +2,8 @@ import React, { createContext, useState } from 'react';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import Parent from './Component/Counter/Parent';
 import ContextParent from './Context/ContextParent';
+import ByUseReducer from './DataFatch/ByUseReducer';
+import ByUseState from './DataFatch/ByUseState';
 import ComplexReducer from './Reducer/ComplexReducer';
 import ReducerCounter from './Reducer/ReducerCounter';
 import UseReducer from './Reducer/UseReducer';
@@ -48,6 +50,14 @@ const App = () => {
         {
           path: '/complexreducer',
           element: <ComplexReducer></ComplexReducer>
+        },
+        {
+          path: '/datafatchbyusestate',
+          element: <ByUseState></ByUseState>
+        },
+        {
+          path: '/datafatchbyusereducer',
+          element: <ByUseReducer></ByUseReducer>
         }
       ]
     }
