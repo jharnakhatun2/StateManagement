@@ -11,22 +11,22 @@ import Main from './Router/Main';
 import StateForm from './StateForm/StateForm';
 
 
-export const CounterContext = createContext();
 
+export const counter_Context = createContext();
 const App = () => {
-  const [contextState, setContextState] = useState(1);
-  
-  const value = {
-    contextState,
-    setContextState
-  }
+ const [count, setCount] = useState(0);
 
+    const value = { count, setCount};
 
   const router = createBrowserRouter([
     {
       path: '/',
       element: <Main></Main>,
       children: [
+        {
+          path: '/',
+          element: <Parent></Parent>
+        },
         {
           path: '/count',
           element: <Parent></Parent>
@@ -63,11 +63,11 @@ const App = () => {
     }
   ])
   return (
+    <counter_Context.Provider value={value}>
     <div className="max-w-[1440px] mx-auto">
-    <CounterContext.Provider value={value}>
-      <RouterProvider router={router} ></RouterProvider> 
-      </CounterContext.Provider>    
+      <RouterProvider router={router} ></RouterProvider>  
     </div>
+    </counter_Context.Provider>
   );
 };
 
