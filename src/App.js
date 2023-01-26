@@ -8,6 +8,7 @@ import ComplexReducer from './Reducer/ComplexReducer';
 import ReducerCounter from './Reducer/ReducerCounter';
 import UseReducer from './Reducer/UseReducer';
 import Main from './Router/Main';
+import ReducerForm from './StateForm/ReducerForm';
 import StateForm from './StateForm/StateForm';
 
 
@@ -58,6 +59,10 @@ const App = () => {
         {
           path: '/datafatchbyusereducer',
           element: <ByUseReducer></ByUseReducer>
+        },
+        {
+          path: '/reducerForm',
+          element: <ReducerForm></ReducerForm>
         }
       ]
     }
